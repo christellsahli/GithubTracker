@@ -17,7 +17,7 @@
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="${githuber.avatarUrl}" width=60%; alt="Avatar">
                 <div class="card-body">
-                    <p class="card-text">${githuber.name}</p>
+                    <p class="card-text">${githuber.login}</p>
                 </div>
             </div>
         </li>
