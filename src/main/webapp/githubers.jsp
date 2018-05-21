@@ -10,20 +10,26 @@
 
 <%@include file="headers.jsp" %>
 
-
-<ul class="list-group list-group-flush">
-    <c:forEach  var="githuber" items="${githubers}">
-        <li class="list-group-item">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="${githuber.avatarUrl}" width=60%; alt="Avatar">
-                <div class="card-body">
-                    <p class="card-text">${githuber.login}</p>
+<table class="table">
+    <c:forEach var="githuber" items="${githubers}" >
+        <tr>
+            <td><c:out value="${githuber.name}"/></td>
+            <td><c:out value="${githuber.email}"/></td>
+            <td><c:out value="${githuber.login}"/></td>
+            <td>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="${githuber.avatarUrl}" width=30%; alt="Avatar">
                 </div>
-            </div>
-        </li>
+            </td>
+            <td>
+                <form action="untrack" method="post">
+                    <input name="id" type="hidden" value="${githuber.id}">
+                    <input class="btn btn-primary" type="submit" value="Delete"/>
+                </form>
+            </td>
+        </tr>
     </c:forEach>
-
-</ul>
+</table>
 
 
 </body>

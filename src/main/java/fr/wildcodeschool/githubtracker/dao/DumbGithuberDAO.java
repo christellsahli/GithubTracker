@@ -12,7 +12,7 @@ import java.util.List;
 public class DumbGithuberDAO implements GithuberDAO{
     private final static List<Githuber> githuberList = new ArrayList<>(5);
 
-    static {
+   static {
         githuberList.add(new Githuber(1L, "christellsahli", "christellsahli@gmail.com", "christellsahli", "https://avatars3.githubusercontent.com/u/38050036?s=88&v=4"));
         githuberList.add(new Githuber(2L, "Gregbee", "backtopa@gmail.com", "Gregbee", "https://avatars1.githubusercontent.com/u/14792727?s=88&v=4"));
         githuberList.add(new Githuber(3L, "Julien Bourbonnais", "jbourbo@gmail.com", "jbourbo", "https://avatars0.githubusercontent.com/u/5736082?s=88&v=4"));
@@ -25,6 +25,16 @@ public class DumbGithuberDAO implements GithuberDAO{
     @Override
     public List<Githuber> getGithubers() {
         return githubers;
+    }
+
+    @Override
+    public Githuber getGithuber(String login) {
+        return null;
+    }
+
+    @Override
+    public boolean deleteGithuber(long id) {
+        return false;
     }
 
     @Override

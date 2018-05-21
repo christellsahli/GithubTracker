@@ -12,7 +12,7 @@ public class ObjectMapperProducer {
     @Produces
     public ObjectMapper produceObjectMapper(){
         return new ObjectMapper()
-                .configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false);
+                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
     }
 

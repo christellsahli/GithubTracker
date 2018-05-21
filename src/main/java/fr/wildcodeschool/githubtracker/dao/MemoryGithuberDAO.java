@@ -27,10 +27,26 @@ public class MemoryGithuberDAO implements GithuberDAO {
     }
 
     @Override
+    public Githuber getGithuber(String login) {
+        List<Githuber> githubers = getGithubers();
+        for (Githuber g : githubers){
+            if (login.equals(g.getLogin())){
+                return g;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public void saveGithuber(Githuber githuber) {
         if (githuber != null){
             mapGithubers.put(githuber.getLogin(), githuber);
         }
+    }
+
+    @Override
+    public boolean deleteGithuber(long id) {
+        return false;
     }
 
     @PostConstruct
