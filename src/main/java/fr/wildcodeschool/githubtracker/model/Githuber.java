@@ -1,28 +1,41 @@
 package fr.wildcodeschool.githubtracker.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 
+
+@Entity
+@Table(name="githuber")
 public class Githuber {
 
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private long githubId;
+    @Column(name="github_id")
+    private Long githubId;
 
+    @Column(name="name")
     private String name;
 
+    @Column(name="url")
     private String url;
 
+    @Column(name="email")
     private String email;
 
+    @Column(name="login")
     private String login;
 
+    @Column(name="bio")
     private String bio;
 
+    @Column(name="location")
     private String location;
 
+    @Column(name="avatar_url")
     private String avatarUrl;
 
 

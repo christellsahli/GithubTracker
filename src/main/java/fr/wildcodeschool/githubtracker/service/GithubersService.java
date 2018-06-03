@@ -12,7 +12,7 @@ import java.util.List;
 public class GithubersService {
 
     @Inject
-    @JdbcGithuber
+    @Jpa
     private GithuberDAO dao;
 
     @Inject
